@@ -15,14 +15,19 @@ public class MyRecursion {
         int index3 = indexOf("Hello world", "wow");
         System.out.println(index3); //-1
 
+        int index4 = indexOf("hi 49J", "49J");
+        System.out.println(index4); //3
+
     }
     public static int indexOf(String first,String second){
         return indexOf(first,second,0,0);
     }
 
     public static int indexOf(String first, String second,int a, int b){
-        if(a>=first.length()) return -1;
         if(b==second.length()) return a-b;
+        if(a>=first.length()) return -1;
+
+
         if(first.charAt(a)==second.charAt(b)) return indexOf(first,second,a+1,b+1);
         else if(b!=0) return indexOf(first,second,a,0);
         else return indexOf(first,second,a+1,0);
